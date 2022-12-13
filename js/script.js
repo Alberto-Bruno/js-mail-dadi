@@ -53,5 +53,30 @@ const emailField = document.getElementById('email');
 const button = document.getElementById('button');
 const result = document.getElementById('result');
 
+// Agganciamo l'event listner al click del buttom
+button.addEventListener('click', function () {
+    // Raccolgo il valore dall'imput (la mail)
+    const userEmail = emailField.value.trim();
 
+    // Validazione
+    if (!userEmail) {
+        result.classList.add('text-danger');
+        result.innerText = 'Email non valida';
+        return;
+    }
+
+    let isAllowed = false;
+
+    // Controlliamo se la mail inserita è tra quelle autorizate
+    for (let i = 0; i < allowedEmails.length; i++) {
+        const currentEmail = allowedEmails[i];
+        console.log(currentEmail);
+        if (currentEmail === userEmail) {
+            isAllowed = true;
+        }
+    }
+
+    // TERNARIO... Nome costante = condizione ? se true : se False;
+    result.innerText = isAllowed ? 'Benvenuto' : 'Spiacente, email non autorizzata';
+});
 
