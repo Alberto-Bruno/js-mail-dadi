@@ -29,3 +29,29 @@ resultElement.innerHTML = `
 <div> Tiro del Computer: <strong>${pcNum}</strong></div>
 <h3>${message}</h3>
 `
+
+
+
+/*
+- Chiedi all'utente la sua email, con uin piccolo form.
+- Controllare che sia nella lista di chi può accedere.
+- Stampa un messaggio appropriato sull'esito del controllo.
+*/
+
+// creo la lista di email autorizzate
+const allowedEmails = [
+    'name0@outlook.it',
+    'name1@outlook.it',
+    'name2@outlook.it',
+    'name3@outlook.it',
+    'name4@outlook.it',
+    'name5@outlook.it',
+];
+
+// Prendo gli elemeti dalla pagina
+const emailField = document.getElementById('email');
+const button = document.getElementById('button');
+const result = document.getElementById('result');
+
+
+
